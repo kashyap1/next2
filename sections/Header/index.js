@@ -1,9 +1,9 @@
 import React from "react";
-import { AppBar, Container, Toolbar, Button, Typography, Link} from "@material-ui/core";
-import FitnessCenterRoundedIcon from '@material-ui/icons/FitnessCenterRounded';
+import { AppBar, Container, Toolbar, Button, Typography, Link} from "@mui/material";
+import FitnessCenterRoundedIcon from '@mui/icons-material/FitnessCenterRounded';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router'
-import useStyles from "./indexStyles";
+import styles from "./indexStyles";
 
 const AuthLinks = [
   {
@@ -39,7 +39,6 @@ const UnAuthLinks = [
 
 export default function Header(props) {
   const LinkData = !props.isAuthenticated ? AuthLinks : UnAuthLinks;
-  const classes = useStyles();
   const router = useRouter();
   const preventDefault = (event) => event.preventDefault();
   function handleClick( e, link) {
@@ -48,19 +47,19 @@ export default function Header(props) {
   }
 
   return (
-    <AppBar position="relative" className={classes.root}>
+    <AppBar position="relative" sx={styles.root}>
       <Toolbar>
-        <Container maxWidth={false}	className={classes.logoContainer}>
-            <FitnessCenterRoundedIcon fontSize="small" className={classes.logo} onClick={() => handleClick(null, '/')}/>
-            <NextLink href="/"><Link href="#" onClick={preventDefault} color="inherit" className={classes.companyName}>Transformers</Link></NextLink>
+        <Container maxWidth={false}	sx={styles.logoContainer}>
+            <FitnessCenterRoundedIcon fontSize="small" sx={styles.logo} onClick={() => handleClick(null, '/')}/>
+            <NextLink href="/"><Link href="#" onClick={preventDefault} color="inherit" sx={styles.companyName}>Transformers</Link></NextLink>
         </Container>
-          {LinkData.map(({label, link, cssClass}, i) => <Button key={`headerLink${i}`} color="inherit" onClick={(e) => handleClick(e, link)} className={classes[cssClass] || null}>{label}</Button>)}
+          {LinkData.map(({label, link, cssClass}, i) => <Button key={`headerLink${i}`} color="inherit" onClick={(e) => handleClick(e, link)} sx={styles[cssClass] || null}>{label}</Button>)}
     </Toolbar>
     </AppBar>
 
   );
 }
-//<div className={classes.container}>
+//<div sx={styles.container}>
 //   <Box
 //     display="flex"
 //     justifyContent="space-between"

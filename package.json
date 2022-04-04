@@ -3,15 +3,19 @@
   "version": "4.0.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "latest",
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@prisma/client": "^2.27.0",
     "clsx": "latest",
-    "next": "latest",
+    "next": "^12.1.4",
+    "prisma": "^2.27.0",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "@prisma/client": "^2.27.0",
-    "@material-ui/icons": "latest",
-    "prisma": "^2.27.0"
+    "react-dom": "latest"
   },
   "scripts": {
     "dev": "next -p 3050",

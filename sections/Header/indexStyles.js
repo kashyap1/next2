@@ -1,6 +1,4 @@
-import {makeStyles} from '@material-ui/core/styles';
-
-export default makeStyles((theme) => ({
+const theme = {
     root: {
       flexGrow: 1
     },
@@ -8,10 +6,10 @@ export default makeStyles((theme) => ({
         flexGrow: 1,
         display: 'flex',
     },
-    logo: {
+    logo: (theme) => ({
         marginRight: theme.spacing(2),
         alignSelf: 'center',
-    },
+    }),
     navLinks: {
         whiteSpace: 'nowrap',
     },
@@ -20,4 +18,5 @@ export default makeStyles((theme) => ({
             textDecoration: 'none',
         }
     }
-  }));
+  };
+  export default theme;
